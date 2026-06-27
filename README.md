@@ -1,0 +1,28 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/kt-aicoding/.github/main/assets/logo.svg" alt="KT AI Coding logo" width="96" />
+</p>
+
+# KT AI Coding CLI Tools
+
+Command-line tools for configuring and operating AI coding environments.
+
+中文说明见 [README.zh-CN.md](README.zh-CN.md)。
+
+## Scope
+
+This repository stages small CLI tools for AI coding workflows: profile switching, Codex configuration, status line presets, local setup helpers, and migration utilities.
+
+Mature tools with independent users can graduate into standalone repositories.
+
+## Layout
+
+```text
+tools/
+  <tool-name>/
+```
+
+## Candidate Tools
+
+- `ccuse` migration candidate: Claude Code profile switcher.
+- `codex-config-kit` planned: Codex config presets, status line presets, and setup helpers.
+
