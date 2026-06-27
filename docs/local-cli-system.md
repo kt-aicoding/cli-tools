@@ -17,6 +17,20 @@ This document captures Kevin's current AI coding CLI operating model. It is a pu
 
 Principle: deterministic cloud, database, source-control, and deployment operations should use CLIs. MCP should stay small and reserved for agent-native value.
 
+## Decision Framework
+
+Use this framework when deciding whether a capability belongs in a CLI, a script, an MCP server, or a skill.
+
+| Capability shape | Best home | Reason |
+| --- | --- | --- |
+| Repeatable command sequence with clear inputs and outputs | CLI tool | Easy to test, compose, document, and run outside an agent |
+| Project-local one-off automation | Project script | Keeps context and assumptions local to the project |
+| Agent behavior, review checklist, or operating procedure | Skill | The value is instruction and judgment rather than executable code |
+| Agent-native access to external context or browser state | MCP server | The value is a live tool surface inside the agent loop |
+| Cloud deployment, billing/resource inspection, env management | Provider CLI | Mature CLIs are more deterministic and easier to audit |
+
+Default to the smallest surface that solves the problem. Promote only when repetition, users, and maintenance cost justify it.
+
 ## CLI Layers
 
 | Layer | Tools | Role |
@@ -104,6 +118,16 @@ flyctl apps list --json
 - Keep Supabase demo development in the existing shared project unless a separate project is explicitly required.
 - Upgrade global tools deliberately: patch-level agent CLI updates are low risk; `pnpm` major upgrades and Railway major upgrades should be project-driven.
 
+## Anti-Patterns
+
+| Anti-pattern | Why it is risky | Preferred approach |
+| --- | --- | --- |
+| Wrapping every provider CLI in custom scripts | Hides provider behavior and makes failures harder to debug | Use provider CLI directly until repetition is proven |
+| Enabling provider MCPs by default | Adds auth/session complexity and duplicates CLI capability | Keep provider MCPs task-specific |
+| Global upgrades without a project need | Can break lockfiles, CLIs, or local build assumptions | Upgrade during maintenance windows with verification |
+| Storing machine-local state in public docs | Leaks private assumptions and becomes stale quickly | Keep public docs sanitized and keep private inventory local |
+| Building a tool before writing the command sequence | Premature abstraction | Document the manual sequence first, then automate |
+
 ## Upgrade Policy
 
 | Tool class | Policy |
@@ -112,3 +136,14 @@ flyctl apps list --json
 | Package manager major versions | Do not auto-upgrade; major changes can affect lockfiles and project scripts |
 | Provider CLIs | Monthly version check; upgrade only when required for a task or security fix |
 | Railway CLI | Upgrade and authenticate only when Railway resource/cost checks or deployments are needed |
+
+## Reference Checklist
+
+Before adding a new CLI tool to this organization:
+
+- It has a specific AI coding workflow purpose.
+- It has a clear owner repository and does not duplicate an existing mature CLI.
+- It has a documented command surface, at least `--help` or equivalent.
+- It does not require committed secrets, private paths, or personal machine state.
+- It can be verified with a small deterministic command.
+- It has a promotion path: docs -> script -> CLI -> standalone repository.
