@@ -15,12 +15,19 @@
 ## 目录规划
 
 ```text
+docs/
+  local-cli-system.md
 tools/
   <tool-name>/
 ```
+
+## 操作资料
+
+| 文档 | 说明 |
+| --- | --- |
+| [本地 CLI 体系](docs/local-cli-system.md) | 当前 CLI 分层、平台登录态、仓库归属、维护命令和升级策略。 |
 
 ## 候选工具
 
 - `ccuse` 迁移候选：Claude Code profile switcher。
 - `codex-config-kit` 计划中：Codex 配置预设、状态栏预设和 setup helpers。
-

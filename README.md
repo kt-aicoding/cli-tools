@@ -17,12 +17,19 @@ Mature tools with independent users can graduate into standalone repositories.
 ## Layout
 
 ```text
+docs/
+  local-cli-system.md
 tools/
   <tool-name>/
 ```
+
+## Operating References
+
+| Document | Notes |
+| --- | --- |
+| [Local CLI System](docs/local-cli-system.md) | Current CLI layers, provider login state, repository placement, maintenance commands, and upgrade policy. |
 
 ## Candidate Tools
 
 - `ccuse` migration candidate: Claude Code profile switcher.
 - `codex-config-kit` planned: Codex config presets, status line presets, and setup helpers.
-
