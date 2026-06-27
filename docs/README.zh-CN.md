@@ -8,6 +8,13 @@
 | --- | --- |
 | [本地 CLI 体系](local-cli-system.md) | 当前 CLI 分层、平台 CLI 状态、仓库归属、维护命令和升级策略。 |
 
+## 相关 Skill
+
+| Skill | 用途 |
+| --- | --- |
+| [`cli-tooling-governance`](https://github.com/kt-aicoding/skills/blob/main/skills/codex/cli-tooling-governance/SKILL.md) | CLI 归属、成熟度、验证和升级决策。 |
+| [`kt-aicoding-registry`](https://github.com/kt-aicoding/skills/blob/main/skills/codex/kt-aicoding-registry/SKILL.md) | 仓库归属和 catalog 一致性。 |
+
 ## 边界
 
 这个目录用于保存 CLI 体系和治理资料。具体工具的使用文档应放在 `tools/<tool-name>/` 内，跟工具实现一起维护。

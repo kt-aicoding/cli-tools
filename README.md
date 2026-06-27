@@ -46,6 +46,13 @@ tools/
 | [文档索引](docs/README.zh-CN.md) | CLI 体系和操作资料入口。 |
 | [本地 CLI 体系](docs/local-cli-system.md) | 当前 CLI 分层、平台登录态、仓库归属、维护命令和升级策略。 |
 
+## 相关 Skill
+
+| Skill | 用途 |
+| --- | --- |
+| [`cli-tooling-governance`](https://github.com/kt-aicoding/skills/blob/main/skills/codex/cli-tooling-governance/SKILL.md) | 判断 CLI、脚本、MCP、skill、独立仓库之间的边界，维护 CLI 成熟度、验证和升级策略。 |
+| [`kt-aicoding-registry`](https://github.com/kt-aicoding/skills/blob/main/skills/codex/kt-aicoding-registry/SKILL.md) | 判断工具是否仍属于 `cli-tools`，还是应迁入其他 kt-aicoding 仓库或独立成仓。 |
+
 ## 如何把这个仓库当参考
 
 这个仓库不只是放工具代码，也沉淀一套判断方式：

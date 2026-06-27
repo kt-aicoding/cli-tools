@@ -21,6 +21,8 @@ Principle: deterministic cloud, database, source-control, and deployment operati
 
 Use this framework when deciding whether a capability belongs in a CLI, a script, an MCP server, or a skill.
 
+Canonical skill: [`cli-tooling-governance`](https://github.com/kt-aicoding/skills/blob/main/skills/codex/cli-tooling-governance/SKILL.md).
+
 | Capability shape | Best home | Reason |
 | --- | --- | --- |
 | Repeatable command sequence with clear inputs and outputs | CLI tool | Easy to test, compose, document, and run outside an agent |
