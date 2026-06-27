@@ -43,6 +43,7 @@ tools/
 
 | 文档 | 说明 |
 | --- | --- |
+| [文档索引](docs/README.zh-CN.md) | CLI 体系和操作资料入口。 |
 | [本地 CLI 体系](docs/local-cli-system.md) | 当前 CLI 分层、平台登录态、仓库归属、维护命令和升级策略。 |
 
 ## 候选工具

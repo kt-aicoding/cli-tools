@@ -27,6 +27,7 @@ tools/
 
 | Document | Notes |
 | --- | --- |
+| [Documentation Index](docs/README.md) | Entry point for CLI operating documents. |
 | [Local CLI System](docs/local-cli-system.md) | Current CLI layers, provider login state, repository placement, maintenance commands, and upgrade policy. |
 
 ## Candidate Tools
