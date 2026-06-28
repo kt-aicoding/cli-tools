@@ -1,6 +1,6 @@
 # Local CLI System
 
-Last refreshed: 2026-06-27.
+Last refreshed: 2026-06-28.
 
 This document captures Kevin's current AI coding CLI operating model. It is a public, sanitized snapshot: do not store tokens, API keys, OAuth secrets, browser cookies, machine-local private paths, or private project context here.
 
@@ -49,12 +49,12 @@ Default to the smallest surface that solves the problem. Promote only when repet
 
 | Provider | CLI state | Resource note |
 | --- | --- | --- |
-| Vercel | logged in | Hobby team; multiple projects and several Cron jobs visible; no contracts, Blob stores, Marketplace resources, or alert groups found from CLI |
-| Supabase | logged in | demo apps consolidated into one shared project |
+| Vercel | logged in | 4 projects visible from read-only CLI query |
+| Supabase | logged in | demo apps consolidated into one shared `kevinten10` project |
 | CloudBase | logged in | one normal personal environment visible |
-| Cloudflare | logged in through `wrangler` | real resources exist: Pages, KV, D1, R2, and Queue |
-| Netlify | logged in | current account site list returned empty |
-| Fly.io | logged in | app list returned empty |
+| Cloudflare | logged in through `wrangler` | real resources exist; 2026-06-28 read-only counts returned Pages=1, KV=2, D1=1; R2/Queues count commands returned no parseable JSON in this run |
+| Netlify | logged in | current directory is not linked; site list count returned 0 |
+| Fly.io | logged in | app list count returned 0; metrics warning is non-blocking |
 | Railway | installed, not authenticated | complete `railway login --browserless` before resource or cost checks |
 | GitHub | local keyring auth works | use `env -u GH_TOKEN gh ...` if an outer shell has a stale `GH_TOKEN` |
 
