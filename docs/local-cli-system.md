@@ -52,7 +52,7 @@ Default to the smallest surface that solves the problem. Promote only when repet
 | Vercel | logged in | 4 projects visible from read-only CLI query |
 | Supabase | logged in | demo apps consolidated into one shared `kevinten10` project |
 | CloudBase | logged in | one normal personal environment visible |
-| Cloudflare | logged in through `wrangler` | real resources exist; 2026-06-28 read-only counts returned Pages=1, KV=2, D1=1; R2/Queues count commands returned no parseable JSON in this run |
+| Cloudflare | logged in through `wrangler` | real resources exist; 2026-06-28 read-only counts returned Pages=1, KV=2, D1=1, R2=1, Queues=1 |
 | Netlify | logged in | current directory is not linked; site list count returned 0 |
 | Fly.io | logged in | app list count returned 0; metrics warning is non-blocking |
 | Railway | installed, not authenticated | complete `railway login --browserless` before resource or cost checks |
