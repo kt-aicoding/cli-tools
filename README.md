@@ -88,3 +88,14 @@ tools/
 - 涉及云平台时，先读资源状态，再做部署、删除、账单或域名操作。
 - Provider 操作优先使用成熟 CLI，例如 `vercel`、`supabase`、`wrangler`、`tcb`、`netlify`、`flyctl`、`railway`、`gh`。
 - 不默认启用 provider MCP 来替代成熟 CLI，除非任务明确需要 agent-native MCP 能力。
+
+## 本地验证
+
+这个仓库当前以文档和治理资料为主。提交前至少运行：
+
+```bash
+git diff --check
+rg -n "gho_|Bearer|SERVICE_ROLE|password|cookie|secret|token|API_KEY|/Users/" README.md README.zh-CN.md docs || true
+```
+
+敏感扫描只允许命中安全说明或 placeholder，不允许真实凭据、私有路径或账号细节。

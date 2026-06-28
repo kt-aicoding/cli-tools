@@ -46,6 +46,13 @@ tools/
 | [文档索引](docs/README.zh-CN.md) | CLI 体系和操作资料入口。 |
 | [本地 CLI 体系](docs/local-cli-system.md) | 当前 CLI 分层、平台登录态、仓库归属、维护命令和升级策略。 |
 
+## 相关 Skill
+
+| Skill | 用途 |
+| --- | --- |
+| [`cli-tooling-governance`](https://github.com/kt-aicoding/skills/blob/main/skills/codex/cli-tooling-governance/SKILL.md) | 判断 CLI、脚本、MCP、skill、独立仓库之间的边界，维护 CLI 成熟度、验证和升级策略。 |
+| [`kt-aicoding-registry`](https://github.com/kt-aicoding/skills/blob/main/skills/codex/kt-aicoding-registry/SKILL.md) | 判断工具是否仍属于 `cli-tools`，还是应迁入其他 kt-aicoding 仓库或独立成仓。 |
+
 ## 如何把这个仓库当参考
 
 这个仓库不只是放工具代码，也沉淀一套判断方式：
@@ -81,3 +88,14 @@ tools/
 - 涉及云平台时，先读资源状态，再做部署、删除、账单或域名操作。
 - Provider 操作优先使用成熟 CLI，例如 `vercel`、`supabase`、`wrangler`、`tcb`、`netlify`、`flyctl`、`railway`、`gh`。
 - 不默认启用 provider MCP 来替代成熟 CLI，除非任务明确需要 agent-native MCP 能力。
+
+## 本地验证
+
+这个仓库当前以文档和治理资料为主。提交前至少运行：
+
+```bash
+git diff --check
+rg -n "gho_|Bearer|SERVICE_ROLE|password|cookie|secret|token|API_KEY|/Users/" README.md README.zh-CN.md docs || true
+```
+
+敏感扫描只允许命中安全说明或 placeholder，不允许真实凭据、私有路径或账号细节。
